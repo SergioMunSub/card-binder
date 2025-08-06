@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set: {{ set_name.replace('_', ' ') }}</title>
+    <style>
+        img {
+            width: 150px;
+            margin: 5px;
+            transition: transform 0.2s ease;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Set: {{ set_name.replace('_', ' ') }}</h1>
+    <a href="{{ url_for('index') }}">Volver a sobres</a>
+    <div>
+        {% for img in images %}
+            <img src="{{ url_for('static', filename=img) }}" alt="Carta" style="width: 150px; margin: 5px;">
+        {% endfor %}
+    </div>
+</body>
+</html>
