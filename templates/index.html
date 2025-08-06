@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Cartas</title>
+    <style>
+        body { text-align: center; font-family: sans-serif; }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card-grid img {
+            width: 150px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .card-grid img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cartas - Legend of Blue Eyes</h1>
+    <div class="card-grid">
+        {% for image in images %}
+            <img src="{{ url_for('static', filename=image) }}" alt="Carta">
+        {% endfor %}
+    </div>
+</body>
+</html>
